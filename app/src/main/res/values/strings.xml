@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">MyApplication</string>
+    <string name="app_name">My Application</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_underlined"><u>Sign In</u></string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_underlined"><u>Sign Up</u></string>
+    <string name="log_in_to_appoint_services">Log in to appoint services.</string>
+    <string name="appointer">Appointer</string>
+    <string name="welcome_to_the">Welcome to the</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="dont_t_have_an_account">Dont’t have an account?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="email">Email Address</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="edit_personal_information">Edit Personal Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="update_settings">Update Settings</string>
+    <string name="nav_services">Services</string>
+    <string name="nav_featured">Featured</string>
+    <string name="nav_booked">Booked</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_account">Account</string>
 </resources>

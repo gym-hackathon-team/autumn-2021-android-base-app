@@ -20,5 +20,4 @@ abstract class GatewayModule {
     abstract fun bindsSharedPreferencesGateway(
         sharedPreferencesGateway: SharedPreferencesGatewayImpl
     ): SharedPreferencesGateway
-
 }
