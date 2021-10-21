@@ -5,7 +5,6 @@ import com.airbnb.mvrx.fragmentViewModel
 import com.example.app.databinding.FragmentSignInBinding
 import com.example.app.ui.auth.AuthActivity
 import com.example.app.ui.base.BaseFragment
-import com.example.app.ui.main.MainActivity
 
 class SignInFragment : BaseFragment<FragmentSignInBinding>() {
 
@@ -19,6 +18,9 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
     override fun setupListeners() {
         views.tvSignUp.setOnClickListener {
             SignInFragmentDirections.navigateToSignUp().let(findNavController()::navigate)
+        }
+        views.bSignIn.setOnClickListener {
+            SignInFragmentDirections.navigateToMainActivity().let(findNavController()::navigate)
         }
     }
 

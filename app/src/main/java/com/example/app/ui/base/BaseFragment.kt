@@ -71,9 +71,11 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment(), BaseView<VB> {
         viewEvents
             .observe()
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
+            .subscribe ({
                 observer(it)
-            }
+            },{
+
+            })
             .disposeOnDestroy()
     }
 

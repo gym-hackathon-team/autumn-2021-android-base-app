@@ -4,8 +4,8 @@
     <string name="sign_in_underlined"><u>Sign In</u></string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_up_underlined"><u>Sign Up</u></string>
-    <string name="log_in_to_appoint_services">Log in to appoint services.</string>
-    <string name="appointer">Appointer</string>
+    <string name="log_in_to_have_services">Log in to have access.</string>
+    <string name="gymTeam_app">GymTeam app</string>
     <string name="welcome_to_the">Welcome to the</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
@@ -17,7 +17,7 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="update_settings">Update Settings</string>
-    <string name="nav_services">Services</string>
+    <string name="nav_home">Home</string>
     <string name="nav_featured">Featured</string>
     <string name="nav_booked">Booked</string>
     <string name="nav_messages">Messages</string>

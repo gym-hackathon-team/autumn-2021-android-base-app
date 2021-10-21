@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
                     android:text="@string/sign_in_underlined"
-                    android:textColor="#3AE6CA"
+                    android:textColor="#16B5E8"
                     tools:ignore="RtlSymmetry" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#3AE6CA">
+                app:passwordToggleTint="#16B5E8">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"

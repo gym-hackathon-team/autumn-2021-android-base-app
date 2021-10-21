@@ -1,7 +1,9 @@
 package com.example.app.ui.auth
 
 import android.content.Intent
+import androidx.navigation.fragment.NavHostFragment
 import com.airbnb.mvrx.viewModel
+import com.example.app.R
 import com.example.app.databinding.ActivityAuthBinding
 import com.example.app.ui.base.BaseActivity
 import com.example.app.ui.main.MainActivity
@@ -21,4 +23,10 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>() {
         finish()
     }
 
+    override fun onStart() {
+        super.onStart()
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.fragmentContainer
+        ) as NavHostFragment
+    }
 }

@@ -5,8 +5,6 @@ import com.airbnb.mvrx.fragmentViewModel
 import com.example.app.databinding.FragmentSignUpBinding
 import com.example.app.ui.auth.AuthActivity
 import com.example.app.ui.base.BaseFragment
-import com.example.app.ui.sign_in.SignInFragmentViewEvents
-import com.readystatesoftware.chuck.internal.ui.MainActivity
 
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
 
@@ -22,6 +20,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
             SignUpFragmentDirections.navigateToSignIn().let(findNavController()::navigate)
         }
         views.bSignUp.setOnClickListener {
+            SignUpFragmentDirections.navigateToMainActivity().let(findNavController()::navigate)
 //            val username = views.etUsername.text.toString()
 //            val password = views.etPassword.text.toString()
 //            val passwordRepeat = views.etPasswordRepeat.text.toString()

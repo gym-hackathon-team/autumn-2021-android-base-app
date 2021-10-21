@@ -26,14 +26,14 @@
                 android:layout_height="wrap_content"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:text="@string/appointer"
+                android:text="@string/gymTeam_app"
                 android:textStyle="italic|bold"
-                android:textColor="#3AE6CA"
+                android:textColor="#16B5E8"
                 android:textSize="32sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <androidx.appcompat.widget.AppCompatTextView
-                android:text="@string/log_in_to_appoint_services"
+                android:text="@string/log_in_to_have_services"
                 android:layout_marginTop="7dp"
                 android:textColor="#888888"
                 android:textSize="12sp"

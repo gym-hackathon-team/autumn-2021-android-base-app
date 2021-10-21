@@ -44,9 +44,11 @@ abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity(), BaseView<VB> 
         viewEvents
             .observe()
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
+            .subscribe ({
                 observer(it)
-            }
+            },{
+
+        })
             .disposeOnDestroy()
     }
 

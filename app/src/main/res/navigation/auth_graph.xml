@@ -37,6 +37,13 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/navigate_to_mainActivity"
+            app:destination="@id/mainActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -50,6 +57,17 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/navigate_to_mainActivity"
+            app:destination="@id/mainActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.app.ui.main.MainActivity"
+        android:label="MainActivity" />
 
 </navigation>
