@@ -6,5 +6,5 @@ import io.reactivex.Observable
 import io.reactivex.Single
 
 interface AnimeGateway {
-    fun fetchAnime(): Observable<PaginationEntity<MediaEntity>?>
+    fun fetchAnime(): Observable<PaginationEntity<MediaEntity>>
 }

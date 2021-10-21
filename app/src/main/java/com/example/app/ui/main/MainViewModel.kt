@@ -9,6 +9,9 @@ import com.example.domain.gateway.anime.AnimeGateway
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import timber.log.Timber
 
 data class MainActivityViewState(
     val a: Int = 0
@@ -28,6 +31,14 @@ class MainViewModel @AssistedInject constructor(
 
     private fun fetchAnime() {
         animeGateway.fetchAnime()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                Timber.e(it.toString())
+            }, {
+                it.printStackTrace()
+            })
+            .disposeOnCleared()
     }
 
     companion object : MavericksViewModelFactory<MainViewModel, MainActivityViewState> by hiltMavericksViewModelFactory()

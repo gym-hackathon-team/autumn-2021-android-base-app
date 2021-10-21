@@ -2,7 +2,6 @@ package com.example.gateway.gateway.anime
 
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Input
-import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.rx2.rxQuery
 import com.example.app.GetAnimeListQuery
 import com.example.domain.entities.MediaEntity
@@ -17,7 +16,7 @@ class ApolloAnimeGateway @Inject constructor(
     private val apolloClient: ApolloClient
 ): BaseApolloGateway<GetAnimeListQuery.Data, PaginationEntity<MediaEntity>>(AnimeListMapper), AnimeGateway {
 
-    override fun fetchAnime(): Observable<PaginationEntity<MediaEntity>?> = withMapper {
+    override fun fetchAnime(): Observable<PaginationEntity<MediaEntity>> = withMapper {
         apolloClient.rxQuery(GetAnimeListQuery(Input.optional(0)))
     }
 }
