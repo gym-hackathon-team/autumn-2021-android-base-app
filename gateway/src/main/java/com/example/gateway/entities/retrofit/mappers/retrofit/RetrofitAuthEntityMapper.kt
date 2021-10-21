@@ -1,4 +1,4 @@
-package com.example.gateway.entities.retrofit.mappers
+package com.example.gateway.entities.retrofit.mappers.retrofit
 
 import com.example.domain.entities.AuthEntity
 import com.example.gateway.entities.retrofit.base.BaseRetrofitMapper

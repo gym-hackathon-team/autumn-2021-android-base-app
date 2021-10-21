@@ -2,7 +2,7 @@ package com.example.gateway.gateway.auth
 
 import com.example.domain.entities.AuthEntity
 import com.example.domain.gateway.auth.AuthGateway
-import com.example.gateway.entities.retrofit.mappers.RetrofitAuthEntityMapper
+import com.example.gateway.entities.retrofit.mappers.retrofit.RetrofitAuthEntityMapper
 import com.example.gateway.entities.retrofit.response.AuthResponse
 import com.example.gateway.gateway.base.BaseRetrofitGateway
 import javax.inject.Inject

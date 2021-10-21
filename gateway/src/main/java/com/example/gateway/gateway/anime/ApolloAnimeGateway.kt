@@ -2,26 +2,22 @@ package com.example.gateway.gateway.anime
 
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.api.Input
-import com.apollographql.apollo.rx3.rxQuery
+import com.apollographql.apollo.api.Response
+import com.apollographql.apollo.rx2.rxQuery
 import com.example.app.GetAnimeListQuery
+import com.example.domain.entities.MediaEntity
+import com.example.domain.entities.PaginationEntity
 import com.example.domain.gateway.anime.AnimeGateway
-import io.reactivex.rxjava3.schedulers.Schedulers
-import timber.log.Timber
+import com.example.gateway.entities.retrofit.mappers.apollo.AnimeListMapper
+import com.example.gateway.gateway.base.BaseApolloGateway
+import io.reactivex.Observable
 import javax.inject.Inject
 
 class ApolloAnimeGateway @Inject constructor(
     private val apolloClient: ApolloClient
-): AnimeGateway {
+): BaseApolloGateway<GetAnimeListQuery.Data, PaginationEntity<MediaEntity>>(AnimeListMapper), AnimeGateway {
 
-    override fun fetchAnime() {
-        val result = apolloClient.rxQuery(GetAnimeListQuery(Input.optional(0)))
-            .subscribeOn(Schedulers.io())
-            .observeOn(Schedulers.io())
-            .subscribe({
-                Timber.e(it.data.toString())
-            }, {
-                it.printStackTrace()
-            })
+    override fun fetchAnime(): Observable<PaginationEntity<MediaEntity>?> = withMapper {
+        apolloClient.rxQuery(GetAnimeListQuery(Input.optional(0)))
     }
-
 }

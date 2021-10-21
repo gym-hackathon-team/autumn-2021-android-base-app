@@ -17,24 +17,24 @@ type MediaTitle {
 
 type Media {
     id: Int!
-    title: MediaTitle
+    title: MediaTitle!
 }
 
 type PageInfo {
-    total: Int
-    perPage: Int
-    currentPage: Int
-    lastPage: Int
-    hasNextPage: Boolean
+    total: Int!
+    perPage: Int!
+    currentPage: Int!
+    lastPage: Int!
+    hasNextPage: Boolean!
 }
 
 type Page {
-    pageInfo: PageInfo
-    media: [Media]
+    pageInfo: PageInfo!
+    media: [Media!]!
 }
 
 type Query {
-    Page(page: Int, perPage: Int) : Page
+    Page(page: Int, perPage: Int) : Page!
 }
 
 scalar Upload
