@@ -17,11 +17,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun onStart() {
-        super.onStart()
-        val navHostFragment = supportFragmentManager.findFragmentById(
-            R.id.nav_host_fragment_content_main
-        ) as NavHostFragment
-        views.bottomNavigationView.setupWithNavController(navHostFragment.navController)
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        val navHostFragment = supportFragmentManager.findFragmentById(
+//            R.id.nav_host_fragment_content_main
+//        ) as NavHostFragment
+//        views.bottomNavigationView.setupWithNavController(navHostFragment.navController)
+//    }
 }

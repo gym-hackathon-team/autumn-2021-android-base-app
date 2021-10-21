@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'realm-android'
+    id 'com.apollographql.apollo'
 }
 
 android {
@@ -23,12 +24,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // TODO Добавить креды
-            buildConfigField("String", "BASE_URL", "\"https://example.ru/\"")
+            buildConfigField("String", "BASE_URL", "\"https://graphql.anilist.co/\"")
             buildConfigField("String", "CLIENT_SECRET", "\"TODO\"")
             buildConfigField("String", "CLIENT_ID", "\"TODO\"")
         }
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://example.ru/\"")
+            buildConfigField("String", "BASE_URL", "\"https://graphql.anilist.co\"")
             buildConfigField("String", "CLIENT_SECRET", "\"TODO\"")
             buildConfigField("String", "CLIENT_ID", "\"TODO\"")
         }
@@ -59,4 +60,16 @@ dependencies {
 
     // Rx
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    // Apollo
+    implementation "com.apollographql.apollo:apollo-runtime:$apolloVersion"
+    implementation "com.apollographql.apollo:apollo-rx3-support:$apolloVersion"
+    implementation "com.apollographql.apollo:apollo-android-support:$apolloVersion"
+}
+
+apollo {
+    generateKotlinModels.set(true)
 }

@@ -1,0 +1,20 @@
+query GetAnimeList($page: Int) {
+    Page(page: $page, perPage: 10) {
+        pageInfo {
+            total
+            perPage
+            currentPage
+            lastPage
+            hasNextPage
+        }
+        media {
+            id
+            title {
+                romaji
+                english
+                native
+                userPreferred
+            }
+        }
+    }
+}
