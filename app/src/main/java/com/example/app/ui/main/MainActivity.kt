@@ -1,9 +1,6 @@
 package com.example.app.ui.main
 
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.airbnb.mvrx.viewModel
-import com.example.app.R
 import com.example.app.databinding.ActivityMainBinding
 import com.example.app.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint

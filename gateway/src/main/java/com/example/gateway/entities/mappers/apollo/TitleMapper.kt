@@ -1,8 +1,8 @@
-package com.example.gateway.entities.retrofit.mappers.apollo
+package com.example.gateway.entities.mappers.apollo
 
 import com.example.app.GetAnimeListQuery
 import com.example.domain.entities.TitleEntity
-import com.example.gateway.entities.retrofit.base.BaseApolloMapper
+import com.example.gateway.entities.mappers.base.BaseApolloMapper
 
 object TitleMapper: BaseApolloMapper<GetAnimeListQuery.Title, TitleEntity> {
 

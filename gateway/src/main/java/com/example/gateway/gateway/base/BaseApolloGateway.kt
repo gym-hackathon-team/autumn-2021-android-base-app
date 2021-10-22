@@ -2,7 +2,7 @@ package com.example.gateway.gateway.base
 
 import com.apollographql.apollo.api.Response
 import com.example.domain.entities.BaseEntity
-import com.example.gateway.entities.retrofit.base.BaseApolloMapper
+import com.example.gateway.entities.mappers.base.BaseApolloMapper
 import io.reactivex.Observable
 
 

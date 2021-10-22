@@ -7,7 +7,7 @@ import com.example.app.GetAnimeListQuery
 import com.example.domain.entities.MediaEntity
 import com.example.domain.entities.PaginationEntity
 import com.example.domain.gateway.anime.AnimeGateway
-import com.example.gateway.entities.retrofit.mappers.apollo.AnimeListMapper
+import com.example.gateway.entities.mappers.apollo.AnimeListMapper
 import com.example.gateway.gateway.base.BaseApolloGateway
 import io.reactivex.Observable
 import javax.inject.Inject

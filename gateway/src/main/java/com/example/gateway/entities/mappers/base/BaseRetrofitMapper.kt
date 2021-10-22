@@ -1,7 +1,7 @@
-package com.example.gateway.entities.retrofit.base
+package com.example.gateway.entities.mappers.base
 
 import com.example.domain.entities.BaseEntity
-import com.example.gateway.entities.BaseMapper
+import com.example.gateway.entities.retrofit.base.BaseRetrofitModel
 
 
 interface BaseRetrofitMapper<R: BaseRetrofitModel, E: BaseEntity> : BaseMapper<R, E> {

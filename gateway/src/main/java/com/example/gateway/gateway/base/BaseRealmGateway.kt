@@ -6,7 +6,7 @@ import io.reactivex.Single
 import io.realm.Realm
 import io.realm.RealmObject
 import com.example.domain.entities.BaseEntity
-import com.example.gateway.entities.realm.base.BaseRealmMapper
+import com.example.gateway.entities.mappers.base.BaseRealmMapper
 
 open class BaseRealmGateway<R: RealmObject, E: BaseEntity>(
     private val _realm: Lazy<Realm>,

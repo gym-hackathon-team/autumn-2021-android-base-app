@@ -1,4 +1,4 @@
-package com.example.gateway.entities
+package com.example.gateway.entities.mappers.base
 
 import com.example.domain.entities.BaseEntity
 

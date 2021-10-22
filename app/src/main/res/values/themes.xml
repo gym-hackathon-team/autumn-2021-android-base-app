@@ -19,7 +19,10 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.MyApplication.Launcher" parent="Theme.MyApplication">
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#3AE6CA</item>
+        <item name="colorPrimaryVariant">#3AE6CA</item>
+        <item name="colorOnPrimary">#3AE6CA</item>
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
 

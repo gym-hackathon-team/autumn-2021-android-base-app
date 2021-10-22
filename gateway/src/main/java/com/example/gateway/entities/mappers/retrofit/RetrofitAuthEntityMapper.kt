@@ -1,7 +1,7 @@
-package com.example.gateway.entities.retrofit.mappers.retrofit
+package com.example.gateway.entities.mappers.retrofit
 
 import com.example.domain.entities.AuthEntity
-import com.example.gateway.entities.retrofit.base.BaseRetrofitMapper
+import com.example.gateway.entities.mappers.base.BaseRetrofitMapper
 import com.example.gateway.entities.retrofit.response.AuthResponse
 
 internal object RetrofitAuthEntityMapper: BaseRetrofitMapper<AuthResponse, AuthEntity> {

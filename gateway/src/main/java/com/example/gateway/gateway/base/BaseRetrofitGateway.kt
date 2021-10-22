@@ -3,7 +3,7 @@ package com.example.gateway.gateway.base
 import io.reactivex.Completable
 import io.reactivex.Single
 import com.example.domain.entities.BaseEntity
-import com.example.gateway.entities.retrofit.base.BaseRetrofitMapper
+import com.example.gateway.entities.mappers.base.BaseRetrofitMapper
 import com.example.gateway.entities.retrofit.base.BaseRetrofitModel
 
 open class BaseRetrofitGateway<R: BaseRetrofitModel, E: BaseEntity>(
