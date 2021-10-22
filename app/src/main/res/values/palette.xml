@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_accent">#FF3636</color>
     <color name="color_content_accent">#CF497E</color>
     
     <attr name="color_content_primary" format="color" />

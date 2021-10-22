@@ -2,6 +2,8 @@
 package com.example.app.ui.splash
 
 import android.annotation.SuppressLint
+import android.os.Handler
+import androidx.core.os.postDelayed
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.example.app.di.viewmodel.AssistedViewModelFactory
 import com.example.app.di.viewmodel.hiltMavericksViewModelFactory
@@ -29,11 +31,9 @@ class SplashActivityViewModel @AssistedInject constructor(
     }
 
     private fun checkUserLogon() {
-        Observable.interval(1000L, TimeUnit.MILLISECONDS)
-            .subscribe {
-                _viewEvents.post(SplashActivityViewEvents.NavigateToAuthScreen)
-            }
-            .disposeOnCleared()
+        Handler().postDelayed(1000L) {
+            _viewEvents.post(SplashActivityViewEvents.NavigateToAuthScreen)
+        }
     }
 
 

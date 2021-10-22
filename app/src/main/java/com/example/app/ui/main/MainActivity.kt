@@ -1,6 +1,9 @@
 package com.example.app.ui.main
 
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.airbnb.mvrx.viewModel
+import com.example.app.R
 import com.example.app.databinding.ActivityMainBinding
 import com.example.app.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,11 +17,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        val navHostFragment = supportFragmentManager.findFragmentById(
-//            R.id.nav_host_fragment_content_main
-//        ) as NavHostFragment
-//        views.bottomNavigationView.setupWithNavController(navHostFragment.navController)
-//    }
+    override fun onStart() {
+        super.onStart()
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.nav_host_fragment_content_main
+        ) as NavHostFragment
+        views.bottomNavigationView.setupWithNavController(navHostFragment.navController)
+    }
 }

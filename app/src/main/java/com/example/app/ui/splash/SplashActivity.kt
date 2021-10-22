@@ -5,8 +5,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import com.airbnb.mvrx.viewModel
 import com.example.app.databinding.ActivitySplashBinding
-import com.example.app.ui.auth.AuthActivity
 import com.example.app.ui.base.BaseActivity
+import com.example.app.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,7 +29,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     }
 
     private fun handleNavigateToAuthActivity() {
-        Intent(this, AuthActivity::class.java).let { intent ->
+        Intent(this, MainActivity::class.java).let { intent ->
             startActivity(intent)
             finish()
         }

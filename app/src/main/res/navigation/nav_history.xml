@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_services"
-    app:startDestination="@id/serviceListFragment">
-
+    android:id="@+id/nav_history"
+    app:startDestination="@id/templateFragment">
 
     <fragment
-        android:id="@+id/serviceListFragment"
-        android:name="com.example.app.ui.service_list.ServiceListFragment"
+        android:id="@+id/templateFragment"
+        android:name="com.example.app.ui.blank.TemplateFragment"
         android:label="ServiceListFragment" />
 </navigation>
