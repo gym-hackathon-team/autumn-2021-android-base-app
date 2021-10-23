@@ -27,11 +27,5 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         val dividerDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.decoration_transfer_divider)!!
         dividerItemDecoration.setDrawable(dividerDrawable)
         views.rvCards.addItemDecoration(dividerItemDecoration)
-
-        adapter.items = arrayListOf(
-            CardModel("1234", "200"),
-            CardModel("12324", "200"),
-            CardModel("1234", "200")
-        )
     }
 }
