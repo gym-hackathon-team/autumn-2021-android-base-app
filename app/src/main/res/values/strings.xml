@@ -18,4 +18,5 @@
     <string name="transfer_requisites">По реквизитам</string>
     <string name="transfer">Перевести</string>
     <string name="card_divider_text">·</string>
+    <string name="back_to_main">Вернуться на главный</string>
 </resources>
