@@ -1,61 +1,58 @@
 package com.example.app.ui.login
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.airbnb.mvrx.fragmentViewModel
 import com.example.app.databinding.FragmentAuthBinding
 import com.example.app.ui.base.BaseFragment
-import com.readystatesoftware.chuck.internal.ui.MainActivity
-import android.content.Context.MODE_PRIVATE
-import android.widget.Toast
+import com.example.app.ui.main.MainActivity
 
 
-class LoginFragment : BaseFragment<FragmentAuthBinding>()  {
+class LoginFragment : BaseFragment<FragmentAuthBinding>() {
 
     override val viewModel: LoginViewModel by fragmentViewModel()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
-    override fun setupListeners() {
-        super.setupListeners()
-        views.actionButton.setOnClickListener{
-            showProgress(false)
-            viewModel.authUser(views.inputLogin.toString(),views.inputPassword.toString())
-        }
-        viewModel.tokenSLE.observe(viewLifecycleOwner,{
-            handle(it)
-        })
-        viewModel.errorSLE.observe(viewLifecycleOwner,{
-            Toast.makeText(requireContext(), "Неправильный логин или пароль", Toast.LENGTH_LONG).show()
-            showProgress(true)
-        })
-    }
-        private fun handle(token: String) {
-            makeSPWithToken(token)
-            Intent(context, com.example.app.ui.main.MainActivity::class.java).let(::startActivity)
-                activity?.finish()
-            }
-
-   private fun makeSPWithToken(token: String){
-       val  settings:SharedPreferences  = requireContext().getSharedPreferences("TOKENSP", Context.MODE_PRIVATE)
-       val editor :SharedPreferences.Editor= settings.edit()
-       editor.putString( "TOKEN", token )
-       editor.apply()
-   }
     override fun getBinding(): FragmentAuthBinding {
         return FragmentAuthBinding.inflate(layoutInflater)
 
     }
-    private fun showProgress(isShow:Boolean){
+
+    override fun setupListeners() {
+        super.setupListeners()
+        views.actionButton.setOnClickListener {
+            val email = views.inputLogin.text
+            val password = views.inputPassword.text
+            showProgress(false)
+            viewModel.authUser(email.toString(), password.toString())
+        }
+        viewModel.observeViewEvents(::handle)
+    }
+
+    private fun handle(event: LoginFragmentViewEvents) {
+        when (event) {
+            LoginFragmentViewEvents.GoToMainFragment -> handleGoToMainFragment()
+            LoginFragmentViewEvents.ShowError -> handleShowError()
+        }
+    }
+
+    private fun handleShowError() {
+        Toast.makeText(requireContext(), "Неправильный логин или пароль", Toast.LENGTH_LONG)
+            .show()
+        showProgress(true)
+    }
+
+    private fun handleGoToMainFragment() {
+        Intent(context, MainActivity::class.java).let(::startActivity)
+        activity?.finish()
+    }
+
+    private fun showProgress(isShow: Boolean) {
         if (isShow)
-            views.progress.visibility=View.GONE
+            views.progress.visibility = View.GONE
         else
-            views.progress.visibility=View.VISIBLE
+            views.progress.visibility = View.VISIBLE
     }
 
 }

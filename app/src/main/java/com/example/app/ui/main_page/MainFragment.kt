@@ -1,11 +1,10 @@
 package com.example.app.ui.main_page
 
-import android.content.Context
-import android.content.Intent.getIntent
-import android.content.SharedPreferences
-import android.os.Bundle
-import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.mvrx.fragmentViewModel
+import com.example.app.R
 import com.example.app.databinding.FragmentMainBinding
 import com.example.app.ui.base.BaseFragment
 import com.example.app.ui.main_page.recycler_view.CardAdapter
@@ -13,20 +12,26 @@ import com.example.app.ui.main_page.recycler_view.model.CardModel
 
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
-private lateinit var token:String
+    private lateinit var token: String
     override val viewModel: MainFragmentViewModel by fragmentViewModel()
 
+    private val adapter = CardAdapter()
 
     override fun getBinding(): FragmentMainBinding {
         return FragmentMainBinding.inflate(layoutInflater)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val  settings: SharedPreferences = requireContext().getSharedPreferences("TOKENSP", Context.MODE_PRIVATE)
-        val token: String? = settings.getString("TOKEN","")
-        val adapter=CardAdapter()
-        views.rvTransfer.adapter = adapter
-        adapter.items= arrayListOf(CardModel("1234","200"),CardModel("12324","200"),CardModel("1234","200"))
+    override fun setupAdapters() {
+        views.rvCards.adapter = adapter
+        val dividerItemDecoration = DividerItemDecoration(requireContext(), RecyclerView.HORIZONTAL)
+        val dividerDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.decoration_transfer_divider)!!
+        dividerItemDecoration.setDrawable(dividerDrawable)
+        views.rvCards.addItemDecoration(dividerItemDecoration)
+
+        adapter.items = arrayListOf(
+            CardModel("1234", "200"),
+            CardModel("12324", "200"),
+            CardModel("1234", "200")
+        )
     }
 }

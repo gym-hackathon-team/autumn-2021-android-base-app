@@ -9,9 +9,7 @@ import com.example.app.di.api.ApiModule
 import com.example.app.di.apollo.ApolloModule
 import com.example.app.di.app.AppModule
 import com.example.app.di.realm.RealmModule
-import com.example.domain.gateway.anime.CardGateway
 import com.example.domain.gateway.auth.AuthGateway
-import com.example.gateway.gateway.card.ApolloCardGateway
 import com.example.gateway.gateway.auth.RetrofitAuthGateway
 import com.example.gateway.gateway.shared_preferences.SharedPreferencesGatewayImpl
 import javax.inject.Singleton
@@ -25,12 +23,6 @@ abstract class GatewayModule {
     abstract fun bindsSharedPreferencesGateway(
         sharedPreferencesGateway: SharedPreferencesGatewayImpl
     ): SharedPreferencesGateway
-
-    @Binds
-    @Singleton
-    abstract fun bindsCardGateway(
-        animeGateway: ApolloCardGateway
-    ): CardGateway
 
     @Binds
     @Singleton

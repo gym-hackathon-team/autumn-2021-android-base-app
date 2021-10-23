@@ -5,6 +5,8 @@ import io.reactivex.Single
 import com.example.domain.entities.BaseEntity
 import com.example.gateway.entities.mappers.base.BaseRetrofitMapper
 import com.example.gateway.entities.retrofit.base.BaseRetrofitModel
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 open class BaseRetrofitGateway<R: BaseRetrofitModel, E: BaseEntity>(
     private val mapper: BaseRetrofitMapper<R, E>
@@ -16,8 +18,9 @@ open class BaseRetrofitGateway<R: BaseRetrofitModel, E: BaseEntity>(
      * @return Объект типа Single
      */
     fun withMapper(block: () -> Single<R>): Single<E> {
-        val retrofitModel = block().blockingGet()
-        return Single.just(mapper.map(retrofitModel))
+        return block().flatMap {
+            Single.just(mapper.map(it))
+        }
     }
 
     /**

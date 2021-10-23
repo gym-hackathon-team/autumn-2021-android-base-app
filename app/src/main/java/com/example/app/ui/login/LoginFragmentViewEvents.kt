@@ -5,4 +5,5 @@ import com.example.app.ui.base.BaseViewEvents
 
 sealed class LoginFragmentViewEvents: BaseViewEvents{
     object GoToMainFragment: LoginFragmentViewEvents()
+    object ShowError: LoginFragmentViewEvents()
 }

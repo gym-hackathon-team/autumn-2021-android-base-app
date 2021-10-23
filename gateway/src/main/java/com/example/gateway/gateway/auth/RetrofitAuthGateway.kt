@@ -14,8 +14,10 @@ class RetrofitAuthGateway @Inject constructor(
 
     override fun auth(email: String, password: String) = withMapper {
         api.auth(
-            username = email,
-            password = password
+            mapOf(
+                "email" to email,
+                "password" to password
+            )
         )
     }
 }

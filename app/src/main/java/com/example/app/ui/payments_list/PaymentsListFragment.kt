@@ -1,6 +1,5 @@
 package com.example.app.ui.payments_list
 
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration

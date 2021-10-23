@@ -2,18 +2,13 @@ package com.example.gateway.gateway.auth
 
 import com.example.gateway.entities.retrofit.response.AuthResponse
 import io.reactivex.Single
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface AuthApi {
 
-    @FormUrlEncoded
     @Headers("Content-Type: application/json")
     @POST("auth/user/login")
     fun auth(
-        @Field("email") username: String,
-        @Field("password") password: String
+        @Body body: Map<String, String>
     ): Single<AuthResponse>
 }
