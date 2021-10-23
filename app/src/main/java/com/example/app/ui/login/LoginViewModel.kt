@@ -1,12 +1,14 @@
 @file:Suppress("MaxLineLength")
 package com.example.app.ui.login
 
+import androidx.lifecycle.MutableLiveData
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.example.app.di.viewmodel.AssistedViewModelFactory
 import com.example.app.di.viewmodel.hiltMavericksViewModelFactory
 import com.example.app.qwerty.RepositoryIMPL
 import com.example.app.ui.base.BaseViewModel
 import com.example.app.ui.base.BaseViewState
+import com.example.app.utils.SingleLiveEvent
 import com.example.domain.entities.LoginEntity
 import com.example.domain.gateway.auth.AuthGateway
 import dagger.assisted.Assisted
@@ -26,18 +28,23 @@ class LoginViewModel @AssistedInject constructor(
 
     @AssistedFactory
     interface Factory : AssistedViewModelFactory<LoginViewModel, LoginFragmentViewState>
-
-    fun authUser() {
+    val tokenSLE:SingleLiveEvent<String> = SingleLiveEvent()
+    val errorSLE:SingleLiveEvent<Boolean> = SingleLiveEvent()
+    fun authUser(email:String,password:String) {
         val k= RepositoryIMPL()
 //        authGateway.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
-        val loginEntity=LoginEntity("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
+        val loginEntity=LoginEntity(
+//            email, password
+            "n4i8x9a@n4i8x9a.ru", "ReFf2281488")
 //        k.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
         k.auth(loginEntity)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                val a = 0
+                tokenSLE.value=it.token
+//                _viewEvents.post(LoginFragmentViewEvents.GoToMainFragment)
             }, {
+                errorSLE.value=true
                 it.printStackTrace()
             })
             .disposeOnCleared()

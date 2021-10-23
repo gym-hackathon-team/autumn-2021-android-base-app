@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/paymentsFragment"
         android:name="com.example.app.ui.payments_list.PaymentsListFragment"
-        android:label="PaymentsListFragment" />
+        android:label="PaymentsListFragment" >
+        <action
+            android:id="@+id/action_paymentsFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.app.ui.payment.PaymentFragment"
+        android:label="PaymentFragment" />
 </navigation>

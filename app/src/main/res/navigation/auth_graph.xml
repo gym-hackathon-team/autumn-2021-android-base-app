@@ -6,6 +6,13 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.app.ui.main_page.MainFragment">
+        android:name="com.example.app.ui.login.LoginFragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.app.ui.main.MainActivity"
+        android:label="MainActivity" />
 </navigation>
