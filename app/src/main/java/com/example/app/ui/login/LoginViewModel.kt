@@ -35,7 +35,7 @@ class LoginViewModel @AssistedInject constructor(
 //        authGateway.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
         val loginEntity=LoginEntity(
 //            email, password
-            "n4i8x9a@n4i8x9a.ru", "ReFf2281488")
+            "test", "123")
 //        k.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
         k.auth(loginEntity)
             .subscribeOn(Schedulers.io())

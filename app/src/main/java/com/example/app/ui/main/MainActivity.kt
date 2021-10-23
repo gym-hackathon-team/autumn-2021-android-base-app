@@ -1,6 +1,7 @@
 package com.example.app.ui.main
 
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.airbnb.mvrx.viewModel
 import com.example.app.R
@@ -23,5 +24,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             R.id.nav_host_fragment_content_main
         ) as NavHostFragment
         views.bottomNavigationView.setupWithNavController(navHostFragment.navController)
+        setupActionBarWithNavController(navHostFragment.navController)
     }
 }

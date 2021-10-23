@@ -1,5 +1,6 @@
 package com.example.app.ui.auth
 
+import android.os.Bundle
 import com.airbnb.mvrx.viewModel
 import com.example.app.databinding.ActivityAuthBinding
 import com.example.app.ui.base.BaseActivity
@@ -13,5 +14,9 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>() {
 
     override fun getBinding(): ActivityAuthBinding {
         return ActivityAuthBinding.inflate(layoutInflater)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 }

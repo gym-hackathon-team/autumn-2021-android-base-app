@@ -14,7 +14,7 @@
     <string name="transfer_mobile">По номеру телефона</string>
     <string name="transfer_account">Между счетами</string>
     <string name="transfer_other_country">За рубеж</string>
-    <string name="transfer_other_card">На другую карту</string>
+    <string name="transfer_other_card">Перевод на карту</string>
     <string name="transfer_requisites">По реквизитам</string>
     <string name="transfer">Перевести</string>
     <string name="card_divider_text">·</string>
