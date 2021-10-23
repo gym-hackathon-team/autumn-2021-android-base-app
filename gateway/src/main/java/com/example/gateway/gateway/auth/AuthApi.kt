@@ -6,7 +6,6 @@ import retrofit2.http.*
 
 interface AuthApi {
 
-    @Headers("Content-Type: application/json")
     @POST("auth/user/login")
     fun auth(
         @Body body: Map<String, String>

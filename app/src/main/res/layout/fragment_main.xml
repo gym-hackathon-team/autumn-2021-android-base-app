@@ -1,61 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_my_products"
+        style="@style/TextViewInMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Мои карт"
-        style="@style/TextViewInMainPage"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </androidx.appcompat.widget.AppCompatTextView>
+        android:layout_marginTop="20dp"
+        android:text="@string/my_cards" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cards"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:clipToPadding="false"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
         android:paddingStart="20dp"
         android:paddingEnd="15dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_my_products" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_fast_operation"
+        style="@style/TextViewInMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Быстрые операции"
-        style="@style/TextViewInMainPage"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_cards">
-    </androidx.appcompat.widget.AppCompatTextView>
+        android:layout_marginTop="20dp"
+        android:text="@string/promo" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_fast_operations"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="15dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_fast_operation" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="10dp"
+                android:text="@string/extra_promo"
+                android:textColor="@color/white"
+                app:layout_constrainedHeight="true"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/cvBg"
+                app:layout_constraintEnd_toEndOf="@id/cvBg"
+                app:layout_constraintStart_toStartOf="@id/cvBg"
+                app:layout_constraintTop_toTopOf="@id/cvBg" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBg"
+                android:layout_width="288dp"
+                android:layout_height="144dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="288dp"
+                    android:layout_height="144dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/gym" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_transfer"
+        android:padding="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

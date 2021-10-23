@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/drawable/bg_gym.xml" value="0.75" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/drawable/bordered_button_bg.xml" value="0.45364583333333336" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/drawable/button_bg.xml" value="0.45364583333333336" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/drawable/ic_booked.xml" value="0.45364583333333336" />
@@ -10,36 +11,26 @@
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/activity_auth.xml" value="0.4375" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/activity_main.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/activity_splash.xml" value="0.575" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_auth.xml" value="0.5" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_confirmation.xml" value="0.3453125" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_main.xml" value="0.5" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_payment.xml" value="0.3453125" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_payment_list.xml" value="0.3453125" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_service.xml" value="0.575" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_service_list.xml" value="0.575" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_sign_in.xml" value="0.48007246376811596" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_sign_up.xml" value="0.48007246376811596" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_success.xml" value="0.3453125" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_template.xml" value="0.575" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/fragment_welcome.xml" value="0.575" />
+        <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/item_card.xml" value="0.3453125" />
         <entry key="..\:/Users/Konstantin Myagkov/AndroidStudioProjects/baseapp2/app/src/main/res/layout/item_service.xml" value="0.575" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/drawable/ic_action_button.xml" value="0.14322916666666666" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/drawable/ic_chat.xml" value="0.14322916666666666" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14322916666666666" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/drawable/ic_logo.xml" value="0.14322916666666666" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/drawable/ic_right.xml" value="0.14322916666666666" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/drawable/success_button.xml" value="0.14322916666666666" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/activity_auth.xml" value="0.12708333333333333" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/activity_main.xml" value="0.136" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_auth.xml" value="0.152" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_confirmation.xml" value="0.2" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_main.xml" value="0.152" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_payment.xml" value="0.2" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_payment_list.xml" value="0.2" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_success.xml" value="0.2" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/fragment_template.xml" value="0.12708333333333333" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/item_card.xml" value="2.4" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/item_payment.xml" value="0.12" />
-        <entry key="..\:/autumn-2021-android-base-app/app/src/main/res/layout/item_transfer.xml" value="0.12708333333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

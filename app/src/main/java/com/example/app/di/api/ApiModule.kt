@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import com.example.app.di.retrofit.RetrofitModule
 import com.example.gateway.gateway.auth.AuthApi
+import com.example.gateway.gateway.card.CardApi
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -21,5 +22,13 @@ class ApiModule {
         retrofit: Retrofit
     ): AuthApi {
         return retrofit.create(AuthApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCardApi(
+        retrofit: Retrofit
+    ): CardApi {
+        return retrofit.create(CardApi::class.java)
     }
 }

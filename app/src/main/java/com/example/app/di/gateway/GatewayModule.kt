@@ -10,7 +10,9 @@ import com.example.app.di.apollo.ApolloModule
 import com.example.app.di.app.AppModule
 import com.example.app.di.realm.RealmModule
 import com.example.domain.gateway.auth.AuthGateway
+import com.example.domain.gateway.card.CardGateway
 import com.example.gateway.gateway.auth.RetrofitAuthGateway
+import com.example.gateway.gateway.card.RetrofitCardGateway
 import com.example.gateway.gateway.shared_preferences.SharedPreferencesGatewayImpl
 import javax.inject.Singleton
 
@@ -29,4 +31,10 @@ abstract class GatewayModule {
     abstract fun bindsAuthGateway(
         animeGateway: RetrofitAuthGateway
     ): AuthGateway
+
+    @Binds
+    @Singleton
+    abstract fun bindsCardGateway(
+        cardGateway: RetrofitCardGateway
+    ): CardGateway
 }

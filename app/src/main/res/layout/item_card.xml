@@ -50,6 +50,8 @@
         android:layout_marginStart="13dp"
         android:layout_marginBottom="7dp"
         android:textColor="@color/white"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="230 000 ₽" />
