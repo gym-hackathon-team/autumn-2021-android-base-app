@@ -24,6 +24,7 @@ class LoginFragment : BaseFragment<FragmentAuthBinding>()  {
     override fun setupListeners() {
         super.setupListeners()
         views.actionButton.setOnClickListener{
+            showProgress(false)
             viewModel.authUser(views.inputLogin.toString(),views.inputPassword.toString())
         }
         viewModel.tokenSLE.observe(viewLifecycleOwner,{
@@ -31,6 +32,7 @@ class LoginFragment : BaseFragment<FragmentAuthBinding>()  {
         })
         viewModel.errorSLE.observe(viewLifecycleOwner,{
             Toast.makeText(requireContext(), "Неправильный логин или пароль", Toast.LENGTH_LONG).show()
+            showProgress(true)
         })
     }
         private fun handle(token: String) {
@@ -48,6 +50,12 @@ class LoginFragment : BaseFragment<FragmentAuthBinding>()  {
     override fun getBinding(): FragmentAuthBinding {
         return FragmentAuthBinding.inflate(layoutInflater)
 
+    }
+    private fun showProgress(isShow:Boolean){
+        if (isShow)
+            views.progress.visibility=View.GONE
+        else
+            views.progress.visibility=View.VISIBLE
     }
 
 }
