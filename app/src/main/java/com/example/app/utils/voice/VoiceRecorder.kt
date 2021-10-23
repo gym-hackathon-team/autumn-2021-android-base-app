@@ -11,7 +11,7 @@ import okhttp3.Request
 import okhttp3.RequestBody
 import java.io.File
 
-class VoiceRecorder(val filesDir: File) {
+class VoiceRecorder(private val filesDir: File) {
     private var recorder: MediaRecorder? = null
     private fun startRecording() {
         recorder = MediaRecorder().apply {

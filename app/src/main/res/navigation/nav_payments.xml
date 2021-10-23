@@ -21,6 +21,9 @@
             android:id="@+id/navigate_to_confirm"
             app:destination="@id/confirmationFragment"
             app:popUpTo="@id/paymentsFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_paymentsFragment"
+            app:destination="@id/paymentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"

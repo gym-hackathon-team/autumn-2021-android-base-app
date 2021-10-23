@@ -48,4 +48,8 @@ class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
 }
