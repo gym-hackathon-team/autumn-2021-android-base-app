@@ -2,6 +2,7 @@ package com.example.app.di.viewmodel
 
 import com.example.app.ui.auth.AuthActivityViewModel
 import com.example.app.ui.blank.TemplateViewModel
+import com.example.app.ui.confirmation.ConfirmationViewModel
 import com.example.app.ui.login.LoginViewModel
 import dagger.Binds
 import dagger.Module
@@ -62,4 +63,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(MainFragmentViewModel::class)
     fun bindMainFragmentViewModelFactory(factory: MainFragmentViewModel.Factory): AssistedViewModelFactory<*, *>
-    }
+
+@Binds
+@IntoMap
+@ViewModelKey(ConfirmationViewModel::class)
+fun bindConfirmationFragmentViewModelFactory(factory: ConfirmationViewModel.Factory): AssistedViewModelFactory<*, *>
+}
