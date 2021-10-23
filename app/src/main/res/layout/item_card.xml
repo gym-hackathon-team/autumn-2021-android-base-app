@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg_card"
     android:layout_width="164dp"
-    android:layout_height="77dp">
+    android:layout_height="104dp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivLogo"

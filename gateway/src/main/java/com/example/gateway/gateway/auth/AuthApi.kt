@@ -11,7 +11,7 @@ interface AuthApi {
 
     @FormUrlEncoded
     @Headers("Content-Type: application/json")
-    @POST("/auth/user/login")
+    @POST("auth/user/login")
     fun auth(
         @Field("email") username: String,
         @Field("password") password: String

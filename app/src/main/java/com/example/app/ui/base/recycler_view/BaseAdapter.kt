@@ -21,7 +21,7 @@ abstract class BaseAdapter<
     }
 
     var callback: Callback<T>? = null
-    protected var items: List<T> = listOf()
+    public var items: List<T> = listOf()
 
     fun applyItems(newItems: List<T>) {
         this.items = newItems

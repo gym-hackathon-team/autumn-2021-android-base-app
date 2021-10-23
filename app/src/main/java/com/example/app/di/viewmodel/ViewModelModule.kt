@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.multibindings.IntoMap
 import com.example.app.ui.main.MainViewModel
+import com.example.app.ui.main_page.MainFragmentViewModel
 import com.example.app.ui.payments_list.PaymentsListViewModel
 import com.example.app.ui.payment.PaymentViewModel
 import com.example.app.ui.splash.SplashActivityViewModel
@@ -51,10 +52,14 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     fun bindPaymentsLoginViewModelFactory(factory: LoginViewModel.Factory): AssistedViewModelFactory<*, *>
-}
 
     @Binds
     @IntoMap
     @ViewModelKey(PaymentViewModel::class)
     fun bindPaymentViewModelFactory(factory: PaymentViewModel.Factory): AssistedViewModelFactory<*, *>
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MainFragmentViewModel::class)
+    fun bindMainFragmentViewModelFactory(factory: MainFragmentViewModel.Factory): AssistedViewModelFactory<*, *>
     }

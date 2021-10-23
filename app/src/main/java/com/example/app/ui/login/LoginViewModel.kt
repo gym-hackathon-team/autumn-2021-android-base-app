@@ -4,8 +4,10 @@ package com.example.app.ui.login
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.example.app.di.viewmodel.AssistedViewModelFactory
 import com.example.app.di.viewmodel.hiltMavericksViewModelFactory
+import com.example.app.qwerty.RepositoryIMPL
 import com.example.app.ui.base.BaseViewModel
 import com.example.app.ui.base.BaseViewState
+import com.example.domain.entities.LoginEntity
 import com.example.domain.gateway.auth.AuthGateway
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -26,7 +28,11 @@ class LoginViewModel @AssistedInject constructor(
     interface Factory : AssistedViewModelFactory<LoginViewModel, LoginFragmentViewState>
 
     fun authUser() {
-        authGateway.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
+        val k= RepositoryIMPL()
+//        authGateway.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
+        val loginEntity=LoginEntity("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
+//        k.auth("n4i8x9a@n4i8x9a.ru", "ReFf2281488")
+        k.auth(loginEntity)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
