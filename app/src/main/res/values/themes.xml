@@ -15,6 +15,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="color_surface">#F6F6F7</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">

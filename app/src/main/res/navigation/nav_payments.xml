@@ -2,10 +2,10 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_payments"
-    app:startDestination="@id/templateFragment">
+    app:startDestination="@id/paymentsFragment">
 
     <fragment
-        android:id="@+id/templateFragment"
-        android:name="com.example.app.ui.blank.TemplateFragment"
-        android:label="ServiceListFragment" />
+        android:id="@+id/paymentsFragment"
+        android:name="com.example.app.ui.payments_list.PaymentsListFragment"
+        android:label="PaymentsListFragment" />
 </navigation>

@@ -8,15 +8,15 @@ internal object RetrofitAuthEntityMapper: BaseRetrofitMapper<AuthResponse, AuthE
 
     override fun map(retrofitModel: AuthResponse): AuthEntity {
         return AuthEntity(
-            refreshToken = retrofitModel.refreshToken,
-            accessToken = retrofitModel.accessToken
+            token = retrofitModel.token,
+            userId = retrofitModel.userId
         )
     }
 
     override fun map(entity: AuthEntity): AuthResponse {
         return AuthResponse(
-            refreshToken = entity.refreshToken,
-            accessToken = entity.accessToken
+            token = entity.token,
+            userId = entity.userId
         )
     }
 }

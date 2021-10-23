@@ -7,6 +7,6 @@ interface SharedPreferencesGateway {
     var refreshToken: String
 
 
-    fun saveToken(accessToken: String, refreshToken: String)
+    fun saveToken(token: String)
     fun clearAll()
 }

@@ -20,8 +20,8 @@ class SharedPreferencesGatewayImpl @Inject constructor(
         set(value) = save(FIELD_REFRESH_TOKEN, value)
         get() = readString(FIELD_REFRESH_TOKEN).toString()
 
-    override fun saveToken(accessToken: String, refreshToken: String) {
-        this.accessToken = accessToken
+    override fun saveToken(token: String) {
+        this.accessToken = token
         this.refreshToken = refreshToken
     }
 

@@ -2,9 +2,7 @@ package com.example.app.di.retrofit
 
 import android.content.Context
 import com.example.app.di.gateway.GatewayModule
-import com.example.app.network.authenticators.TokenAuthenticator
 import com.example.app.network.interceptors.TokenInterceptor
-import com.example.domain.gateway.auth.AuthGateway
 import com.example.domain.gateway.shared_preferences.SharedPreferencesGateway
 import com.readystatesoftware.chuck.ChuckInterceptor
 import dagger.Module
@@ -24,13 +22,13 @@ class OkHttpModule {
     @Singleton
     fun provideOkHttp(
         chuckInterceptor: ChuckInterceptor,
-        tokenAuthenticator: TokenAuthenticator,
+//        tokenAuthenticator: TokenAuthenticator,
         tokenInterceptor: TokenInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(chuckInterceptor)
             .addInterceptor(tokenInterceptor)
-            .authenticator(tokenAuthenticator)
+//            .authenticator(tokenAuthenticator)
             .build()
     }
 
@@ -45,14 +43,14 @@ class OkHttpModule {
             .build()
     }
 
-    @Provides
-    @Singleton
-    fun provideTokenAuthenticator(
-        authGateway: AuthGateway,
-        sharedPreferencesGateway: SharedPreferencesGateway
-    ): TokenAuthenticator {
-        return TokenAuthenticator(authGateway, sharedPreferencesGateway)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideTokenAuthenticator(
+//        authGateway: AuthGateway,
+//        sharedPreferencesGateway: SharedPreferencesGateway
+//    ): TokenAuthenticator {
+//        return TokenAuthenticator(authGateway, sharedPreferencesGateway)
+//    }
 
     @Provides
     @Singleton

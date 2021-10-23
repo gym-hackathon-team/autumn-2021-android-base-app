@@ -1,6 +1,6 @@
 package com.example.domain.entities
 
 data class AuthEntity(
-    val refreshToken: String,
-    val accessToken: String
+    val token: String,
+    val userId: String
 ): BaseEntity

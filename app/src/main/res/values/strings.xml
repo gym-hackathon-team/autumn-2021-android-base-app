@@ -4,4 +4,18 @@
     <string name="nav_payments">Платежи</string>
     <string name="nav_history">История</string>
     <string name="nav_chat">Чат</string>
+    <string name="transfer_qr">Оплата по QR</string>
+    <string name="payment_mobile">Мобильная связь</string>
+    <string name="payment_services">Услуги ЖКХ</string>
+    <string name="payment_tv">Интернет, ТВ</string>
+    <string name="payment_penalties">Штрафы</string>
+    <string name="payment_taxes">Госуслуги</string>
+    <string name="pay">Оплатить</string>
+    <string name="transfer_mobile">По номеру телефона</string>
+    <string name="transfer_account">Между счетами</string>
+    <string name="transfer_other_country">За рубеж</string>
+    <string name="transfer_other_card">На другую карту</string>
+    <string name="transfer_requisites">По реквизитам</string>
+    <string name="transfer">Перевести</string>
+    <string name="card_divider_text">·</string>
 </resources>

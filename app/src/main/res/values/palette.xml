@@ -2,7 +2,8 @@
 <resources>
     <color name="color_accent">#FF3636</color>
     <color name="color_content_accent">#CF497E</color>
-    
+
+    <attr name="color_surface" format="color"/>
     <attr name="color_content_primary" format="color" />
     <attr name="color_content_background" format="color" />
 </resources>

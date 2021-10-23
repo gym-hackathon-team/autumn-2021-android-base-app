@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.app.ui.blank.TemplateFragment">
+        android:name="com.example.app.ui.login.LoginFragment">
     </fragment>
 </navigation>

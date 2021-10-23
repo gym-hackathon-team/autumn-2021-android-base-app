@@ -24,12 +24,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // TODO Добавить креды
-            buildConfigField("String", "BASE_URL", "\"https://graphql.anilist.co/\"")
+            buildConfigField("String", "BASE_URL", "\"http://5.63.154.19:8079/\"")
             buildConfigField("String", "CLIENT_SECRET", "\"TODO\"")
             buildConfigField("String", "CLIENT_ID", "\"TODO\"")
         }
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://graphql.anilist.co\"")
+            buildConfigField("String", "BASE_URL", "\"http://5.63.154.19:8079/\"")
             buildConfigField("String", "CLIENT_SECRET", "\"TODO\"")
             buildConfigField("String", "CLIENT_ID", "\"TODO\"")
         }

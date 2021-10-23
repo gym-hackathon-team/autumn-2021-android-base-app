@@ -3,6 +3,7 @@ package com.example.app.di.apollo
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.rx3.rxMutate
 import com.example.app.di.retrofit.OkHttpModule
+import com.example.gateway.ApiConstants
 import com.example.gateway.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -21,7 +22,7 @@ class ApolloModule {
         okHttpClient: OkHttpClient
     ): ApolloClient {
         return ApolloClient.builder()
-            .serverUrl(BuildConfig.BASE_URL)
+            .serverUrl("${BuildConfig.BASE_URL}${ApiConstants.GRAPHQL_ENDPOINT}")
             .okHttpClient(okHttpClient)
             .build()
     }

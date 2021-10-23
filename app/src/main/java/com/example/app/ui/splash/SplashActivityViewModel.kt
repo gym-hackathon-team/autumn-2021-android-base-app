@@ -12,8 +12,6 @@ import com.example.app.ui.base.BaseViewState
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import io.reactivex.Observable
-import java.util.concurrent.TimeUnit
 
 data class SplashActivityViewState(
     val a: Int = 0
