@@ -4,4 +4,5 @@
     <string name="nav_payments">Платежи</string>
     <string name="nav_history">История</string>
     <string name="nav_chat">Чат</string>
+    <string name="back_to_main">Вернуться на главный</string>
 </resources>

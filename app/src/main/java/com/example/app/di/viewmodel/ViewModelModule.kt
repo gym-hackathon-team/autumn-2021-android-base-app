@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.multibindings.IntoMap
 import com.example.app.ui.main.MainViewModel
 import com.example.app.ui.splash.SplashActivityViewModel
+import com.example.app.ui.succes_screen.SuccessViewModel
 
 @Module
 @InstallIn(MavericksViewModelComponent::class)
@@ -32,4 +33,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(TemplateViewModel::class)
     fun bindTemplateViewModelFactory(factory: TemplateViewModel.Factory): AssistedViewModelFactory<*, *>
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SuccessViewModel::class)
+    fun bindSuccessViewModelFactory(factory: SuccessViewModel.Factory): AssistedViewModelFactory<*, *>
 }
