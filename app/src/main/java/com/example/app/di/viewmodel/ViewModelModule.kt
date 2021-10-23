@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.multibindings.IntoMap
 import com.example.app.ui.main.MainViewModel
+import com.example.app.ui.payment.PaymentViewModel
 import com.example.app.ui.splash.SplashActivityViewModel
 
 @Module
@@ -32,4 +33,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(TemplateViewModel::class)
     fun bindTemplateViewModelFactory(factory: TemplateViewModel.Factory): AssistedViewModelFactory<*, *>
-}
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PaymentViewModel::class)
+    fun bindPaymentViewModelFactory(factory: PaymentViewModel.Factory): AssistedViewModelFactory<*, *>
+    }
