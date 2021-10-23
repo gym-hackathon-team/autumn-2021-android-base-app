@@ -3,21 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:mask="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_debit_card"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Карта списания"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/action_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </androidx.appcompat.widget.AppCompatTextView>
+        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatTextView>
 
 <androidx.appcompat.widget.AppCompatSpinner
     android:id="@+id/cards"
@@ -62,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Сколько"
+        android:text="Сумма"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_organization_account"
@@ -82,7 +83,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
+        android:id="@+id/action_button"
         style="@style/ActionButtonThemeForPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +91,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/ic_action_button"
-        android:text="Оплатить"
+        android:text="Продолжить"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

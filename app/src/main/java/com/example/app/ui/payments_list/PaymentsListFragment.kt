@@ -2,6 +2,7 @@ package com.example.app.ui.payments_list
 
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,7 +32,7 @@ class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
         views.rvPayments.adapter = paymentsAdapter
         paymentsAdapter.callback = object: PaymentsAdapter.Callback {
             override fun onItemClicked(item: PaymentType) {
-                Toast.makeText(requireContext(), item.toString(), Toast.LENGTH_SHORT).show()
+                PaymentsListFragmentDirections.navigateToPayment().let(findNavController()::navigate)
             }
         }
 
@@ -42,7 +43,7 @@ class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
         views.rvTransfer.addItemDecoration(dividerItemDecoration)
         transfersAdapter.callback = object: TransfersAdapter.Callback {
             override fun onItemClicked(item: TransferType) {
-                Toast.makeText(requireContext(), item.toString(), Toast.LENGTH_SHORT).show()
+                PaymentsListFragmentDirections.navigateToPayment().let(findNavController()::navigate)
             }
         }
     }

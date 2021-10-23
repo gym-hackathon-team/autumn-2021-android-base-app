@@ -7,13 +7,23 @@
     <fragment
         android:id="@+id/paymentsFragment"
         android:name="com.example.app.ui.payments_list.PaymentsListFragment"
-        android:label="PaymentsListFragment" >
+        android:label="Переводы и услуги" >
         <action
-            android:id="@+id/action_paymentsFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
+            android:id="@+id/navigate_to_payment"
+            app:destination="@id/paymentFragment"
+            app:popUpTo="@id/paymentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
         android:name="com.example.app.ui.payment.PaymentFragment"
-        android:label="PaymentFragment" />
+        android:label="Операция" >
+        <action
+            android:id="@+id/navigate_to_confirm"
+            app:destination="@id/confirmationFragment"
+            app:popUpTo="@id/paymentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.app.ui.confirmation.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
 </navigation>

@@ -7,6 +7,7 @@ import com.example.app.databinding.FragmentPaymentBinding
 import com.example.app.ui.base.BaseFragment
 import android.text.TextWatcher
 import android.view.View
+import androidx.navigation.fragment.findNavController
 
 
 class PaymentFragment : BaseFragment<FragmentPaymentBinding>()  {
@@ -15,7 +16,9 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>()  {
     override fun setupListeners() {
         super.setupListeners()
         setupIvAmountListener()
-
+        views.actionButton.setOnClickListener {
+            PaymentFragmentDirections.navigateToConfirm().let(findNavController()::navigate)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
