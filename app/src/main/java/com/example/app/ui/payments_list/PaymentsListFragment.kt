@@ -54,4 +54,5 @@ class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
         ).let(findNavController()::navigate)
     }
 
+
 }

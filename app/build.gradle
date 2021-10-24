@@ -55,6 +55,7 @@ dependencies {
 
     // Timber
     implementation "com.jakewharton.timber:timber:$timberVersion"
+
     implementation 'ru.egslava:MaskedEditText:1.0.5'
 
     //mvvm
