@@ -1,98 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:mask="http://schemas.android.com/apk/res-auto">
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="tvDebitCard, rvCards, tvAccount, etOrganizationAccount, tvAmount, etAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintBottom_toTopOf="@+id/bContinue"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_debit_card"
+        android:id="@+id/tvDebitCard"
+        style="@style/TextViewPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        style="@style/TextViewPrimary"
+        android:paddingHorizontal="20dp"
         android:text="Карта списания"
-        app:layout_constraintBottom_toTopOf="@id/action_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        app:layout_constraintVertical_bias="0.25" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:paddingTop="10dp"
         android:id="@+id/rvCards"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:clipToPadding="false"
         android:orientation="horizontal"
         android:paddingStart="20dp"
         android:paddingEnd="15dp"
-        android:layout_marginTop="10dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_debit_card"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_organization_account"
-        android:layout_marginTop="20dp"
+        android:paddingTop="15dp"
+        android:id="@+id/tvAccount"
+        style="@style/TextViewPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        style="@style/TextViewPrimary"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
         android:text="Счет Организации"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvCards">
-    </androidx.appcompat.widget.AppCompatTextView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvCards" />
 
     <br.com.sapereaude.maskedEditText.MaskedEditText
-        android:id="@+id/iv_organization_account"
+        android:id="@+id/etOrganizationAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"
         android:inputType="number"
         android:typeface="monospace"
-        mask:allowed_chars="1234567890"
-        mask:mask="#### #### #### #### ####"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_organization_account"/>
+        app:layout_constraintStart_toStartOf="parent"
+        mask:allowed_chars="1234567890"
+        mask:mask="#### #### #### #### ####" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_amount"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="100dp"
+        android:id="@+id/tvAmount"
+        style="@style/TextViewPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        style="@style/TextViewPrimary"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
         android:text="Сумма"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_organization_account"
-        >
-    </androidx.appcompat.widget.AppCompatTextView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etOrganizationAccount" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/iv_amount"
-        android:layout_marginTop="10dp"
+        android:id="@+id/etAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="90dp"
+        android:layout_marginTop="10dp"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_amount"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/action_button"
+        android:id="@+id/bContinue"
         style="@style/ActionButtonThemeForPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,10 +98,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/ic_action_button"
-        android:text="Продолжить"
+        android:text="@string/continue_to_transaction"
+        app:layout_constraintTop_toBottomOf="@+id/flow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-    />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

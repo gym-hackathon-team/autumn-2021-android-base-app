@@ -1,15 +1,14 @@
 package com.example.app.ui.main_page
 
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.mvrx.*
 import com.example.app.R
 import com.example.app.databinding.FragmentMainBinding
 import com.example.app.ui.base.BaseFragment
-import com.example.app.ui.main_page.recycler_view.CardAdapter
 import com.example.app.ui.main_page.recycler_view.model.CardModel
+import com.example.app.ui.payment.recycler_view.CardAdapter
 
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
@@ -26,6 +25,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         viewModel.onEach(MainFragmentViewState::cards) {
             handleCardsUpdate(it)
         }
+        views.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.handle(MainFragmentViewActions.OnSwipeToRefresh)
+        }
     }
 
     override fun setupAdapters() {
@@ -39,19 +41,18 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     private fun handleCardsUpdate(cards: Async<List<CardModel>>) {
         when (cards) {
             Uninitialized -> Unit
-            is Loading -> toggleProgressBarVisibility(true)
+            is Loading -> toggleSwipeRefresh(true)
             is Success -> {
-                toggleProgressBarVisibility(false)
+                toggleSwipeRefresh(false)
                 adapter.applyItems(cards.invoke())
             }
             is Fail -> {
-                toggleProgressBarVisibility(false)
+                toggleSwipeRefresh(false)
             }
         }
     }
 
-    private fun toggleProgressBarVisibility(isVisible: Boolean) {
-        views.progress.isVisible = isVisible
+    private fun toggleSwipeRefresh(isRefreshing: Boolean) {
+        views.swipeRefreshLayout.isRefreshing = isRefreshing
     }
-
 }

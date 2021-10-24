@@ -1,102 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:fillViewport="true"
-    android:orientation="vertical"
-    >
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toTopOf="@+id/action_button">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_good_response"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="88dp"
-        app:cardBackgroundColor="@color/ellipse_done_color"
-        app:cardCornerRadius="100dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bContinue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/image_of_good_response"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_good_response"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="88dp"
+            app:cardBackgroundColor="@color/ellipse_done_color"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image_of_good_response"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_right" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bad_response"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="88dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/error"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image_of_bad_response"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_priority_high" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/operation_success"
+            style="@style/TextViewPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_right">
-        </ImageView>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_bad_response"
-        android:visibility="gone"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="88dp"
-        app:cardBackgroundColor="@color/error"
-        app:cardCornerRadius="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_good_response" />
 
-        <ImageView
-            android:id="@+id/image_of_bad_response"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pay_amount"
+            style="@style/TextViewSecondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_priority_high">
-        </ImageView>
-    </androidx.cardview.widget.CardView>
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_success" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/operation_success"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        style="@style/TextViewPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_good_response"
-        android:text="Перевод выполнен">
-    </androidx.appcompat.widget.AppCompatTextView>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/pay_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        style="@style/TextViewSecondary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/operation_success"
-        android:text="300 ₽">
-    </androidx.appcompat.widget.AppCompatTextView>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/action_button"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="22dp"
-        android:layout_marginTop="10dp"
-    android:layout_marginBottom="22dp"
-    android:text="@string/back_to_main"
-    android:textColor="@color/white"
-    android:background="@drawable/ic_action_button"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintTop_toBottomOf="@+id/pay_amount"
-        app:layout_constraintVertical_bias="1"
-    app:layout_constraintStart_toStartOf="parent"
-    >
-</androidx.appcompat.widget.AppCompatButton>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="22dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/ic_action_button"
+            android:text="@string/back_to_main"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pay_amount"
+            app:layout_constraintVertical_bias="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

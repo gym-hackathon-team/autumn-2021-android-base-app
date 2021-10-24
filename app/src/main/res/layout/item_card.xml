@@ -44,15 +44,26 @@
         app:layout_constraintTop_toTopOf="@id/tvDivider"
         tools:text="4329" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_check"
+        app:tint="@color/white" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
         android:layout_marginBottom="7dp"
-        android:textColor="@color/white"
-        android:maxLines="1"
         android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="230 000 ₽" />

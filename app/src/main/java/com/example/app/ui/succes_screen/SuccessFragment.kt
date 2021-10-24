@@ -1,44 +1,44 @@
 package com.example.app.ui.succes_screen
 
-import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
-import androidx.core.view.accessibility.AccessibilityViewCommand
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.airbnb.mvrx.fragmentViewModel
 import com.example.app.R
 import com.example.app.databinding.FragmentSuccessBinding
 import com.example.app.ui.base.BaseFragment
-import com.example.app.ui.main.MainActivity
-import com.example.app.ui.splash.SplashActivityViewEvents
+import com.example.app.ui.confirmation.ConfirmationFragmentArgs
 
 class SuccessFragment : BaseFragment<FragmentSuccessBinding>()  {
 
     override val viewModel: SuccessViewModel by fragmentViewModel()
 
+    private val args: SuccessFragmentArgs by navArgs()
+
+
     override fun getBinding(): FragmentSuccessBinding {
         return FragmentSuccessBinding.inflate(layoutInflater)
     }
-    override fun setupListeners() {
-        viewModel.observeViewEvents(::handle)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupUI()
     }
 
-    private fun handle(event: SuccessFragmentViewEvents) {
-        when (event) {
-            SuccessFragmentViewEvents.ChangeToErrorImage -> changeToErrorImage()
+    override fun setupListeners() {
+        views.bContinue.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
-    private fun changeToErrorImage() {
-        views.cvGoodResponse.visibility= View.INVISIBLE
-        views.cvBadResponse.visibility= View.VISIBLE
-    }
 
-    override fun onStart() {
-        super.onStart()
-        val arguments= Bundle()
-//        arguments.putBoolean("ANSWER",true)
-        viewModel.handleResponse(arguments)
+    private fun setupUI() {
+        if (!args.success) {
+            views.operationSuccess.setText(R.string.result_failure)
+            views.cvGoodResponse.visibility= View.INVISIBLE
+            views.cvBadResponse.visibility= View.VISIBLE
+        } else {
+            views.operationSuccess.setText(R.string.result_success)
+        }
     }
-
 }

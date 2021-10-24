@@ -11,9 +11,11 @@ import com.example.app.di.app.AppModule
 import com.example.app.di.realm.RealmModule
 import com.example.domain.gateway.auth.AuthGateway
 import com.example.domain.gateway.card.CardGateway
+import com.example.domain.gateway.transactions.TransactionsGateway
 import com.example.gateway.gateway.auth.RetrofitAuthGateway
 import com.example.gateway.gateway.card.RetrofitCardGateway
 import com.example.gateway.gateway.shared_preferences.SharedPreferencesGatewayImpl
+import com.example.gateway.gateway.transactions.RetrofitTransactionsGateway
 import javax.inject.Singleton
 
 @Module(includes = [RealmModule::class, ApiModule::class, AppModule::class, ApolloModule::class])
@@ -37,4 +39,10 @@ abstract class GatewayModule {
     abstract fun bindsCardGateway(
         cardGateway: RetrofitCardGateway
     ): CardGateway
+
+    @Binds
+    @Singleton
+    abstract fun bindsTransactionGateway(
+        cardGateway: RetrofitTransactionsGateway
+    ): TransactionsGateway
 }

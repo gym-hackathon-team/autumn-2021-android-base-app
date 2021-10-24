@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/paymentsFragment"
         android:name="com.example.app.ui.payments_list.PaymentsListFragment"
-        android:label="Переводы и услуги" >
+        android:label="Переводы и услуги">
         <action
             android:id="@+id/navigate_to_payment"
             app:destination="@id/paymentFragment"
@@ -16,43 +16,41 @@
     <fragment
         android:id="@+id/paymentFragment"
         android:name="com.example.app.ui.payment.PaymentFragment"
-        android:label="Операция" >
+        android:label="Операция">
         <action
-            android:id="@+id/navigate_to_confirm"
+            android:id="@+id/navigateToConfirm"
             app:destination="@id/confirmationFragment"
-            app:popUpTo="@id/paymentFragment" />
-        <action
-            android:id="@+id/action_paymentFragment_to_paymentsFragment"
-            app:destination="@id/paymentsFragment" />
+            app:popUpTo="@id/paymentFragment"/>
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.example.app.ui.confirmation.ConfirmationFragment"
-        android:label="ConfirmationFragment" >
+        android:label="Подтверждение">
+
+        <argument
+            android:name="cardId"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="float" />
+        <argument
+            android:name="accountId"
+            app:argType="string" />
+
         <action
             android:id="@+id/action_confirmationFragment_to_successFragment"
-            app:destination="@id/successFragment" />
-        <action
-            android:id="@+id/action_confirmationFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
+            app:destination="@id/successFragment"
+            app:popUpTo="@id/paymentsFragment" />
     </fragment>
     <fragment
         android:id="@+id/successFragment"
         android:name="com.example.app.ui.succes_screen.SuccessFragment"
-        android:label="SuccessFragment" >
-        <action
-            android:id="@+id/action_successFragment_to_confirmationFragment"
-            app:destination="@id/confirmationFragment" />
-        <action
-            android:id="@+id/action_successFragment_to_mainFragment2"
-            app:destination="@id/mainFragment2" />
+        android:label="Результат">
+
+        <argument
+            android:name="success"
+            app:argType="boolean" />
+
     </fragment>
-    <fragment
-        android:id="@+id/mainFragment2"
-        android:name="com.example.app.ui.main_page.MainFragment"
-        android:label="MainFragment" >
-        <action
-            android:id="@+id/action_mainFragment2_to_successFragment"
-            app:destination="@id/successFragment" />
-    </fragment>
+
 </navigation>

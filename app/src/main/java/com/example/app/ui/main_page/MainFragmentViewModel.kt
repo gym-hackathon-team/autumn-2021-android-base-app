@@ -10,14 +10,12 @@ import com.example.app.di.viewmodel.hiltMavericksViewModelFactory
 import com.example.app.ui.base.BaseViewModel
 import com.example.app.ui.base.BaseViewState
 import com.example.app.ui.main_page.recycler_view.model.CardModel
-import com.example.domain.entities.CardEntity
 import com.example.domain.gateway.card.CardGateway
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 data class MainFragmentViewState(
-    val cards: Async<List<CardModel>> = Uninitialized,
-    val a: Int = 0
+    val cards: Async<List<CardModel>> = Uninitialized
 ): BaseViewState
 
 class MainFragmentViewModel @AssistedInject constructor(
@@ -30,6 +28,12 @@ class MainFragmentViewModel @AssistedInject constructor(
 
     init {
         fetchCards()
+    }
+
+    override fun handle(action: MainFragmentViewActions) {
+        when (action) {
+            MainFragmentViewActions.OnSwipeToRefresh -> fetchCards()
+        }
     }
 
     private fun fetchCards() {

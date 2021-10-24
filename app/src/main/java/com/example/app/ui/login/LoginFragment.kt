@@ -21,7 +21,7 @@ class LoginFragment : BaseFragment<FragmentAuthBinding>() {
 
     override fun setupListeners() {
         super.setupListeners()
-        views.actionButton.setOnClickListener {
+        views.bSignIn.setOnClickListener {
             val email = views.inputLogin.text
             val password = views.inputPassword.text
             showProgress(false)

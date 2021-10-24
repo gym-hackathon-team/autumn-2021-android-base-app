@@ -23,4 +23,11 @@
     <string name="my_cards">Мои карты</string>
     <string name="extra_promo">Кешбэк 9% при походе в качалку по картам Visa «GYM»</string>
     <string name="promo">Промо</string>
+    <string name="continue_to_transaction">Продолжить</string>
+    <string name="account_to">Счет Зачисления</string>
+    <string name="summ">Сумма</string>
+    <string name="account_from">Счет списания</string>
+    <string name="accept">Подтвердить</string>
+    <string name="result_success">Перевод выполнен</string>
+    <string name="result_failure">Перевод не выполнен</string>
 </resources>

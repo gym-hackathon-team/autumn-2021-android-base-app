@@ -7,5 +7,5 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.app.ui.main_page.MainFragment"
-        android:label="ProfileFragment" />
+        android:label="Главный" />
 </navigation>
