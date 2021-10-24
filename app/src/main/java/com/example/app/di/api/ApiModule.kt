@@ -8,6 +8,7 @@ import retrofit2.Retrofit
 import com.example.app.di.retrofit.RetrofitModule
 import com.example.gateway.gateway.auth.AuthApi
 import com.example.gateway.gateway.card.CardApi
+import com.example.gateway.gateway.commands.CommandsApi
 import com.example.gateway.gateway.transactions.TransactionsApi
 import javax.inject.Named
 import javax.inject.Singleton
@@ -39,5 +40,13 @@ class ApiModule {
         retrofit: Retrofit
     ): TransactionsApi {
         return retrofit.create(TransactionsApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCommandsApi(
+        retrofit: Retrofit
+    ): CommandsApi {
+        return retrofit.create(CommandsApi::class.java)
     }
 }
