@@ -13,6 +13,7 @@ import com.example.app.ui.payments_list.recycler_view.payments.PaymentsAdapter
 import com.example.app.ui.payments_list.recycler_view.payments.model.PaymentType
 import com.example.app.ui.payments_list.recycler_view.transfers.TransfersAdapter
 import com.example.app.ui.payments_list.recycler_view.transfers.model.TransferType
+import com.example.domain.entities.Command
 
 
 class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
@@ -31,7 +32,7 @@ class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
         views.rvPayments.adapter = paymentsAdapter
         paymentsAdapter.callback = object: PaymentsAdapter.Callback {
             override fun onItemClicked(item: PaymentType) {
-                PaymentsListFragmentDirections.navigateToPayment().let(findNavController()::navigate)
+                PaymentsListFragmentDirections.navigateToPayment(true).let(findNavController()::navigate)
             }
         }
 
@@ -42,13 +43,15 @@ class PaymentsListFragment : BaseFragment<FragmentPaymentListBinding>()  {
         views.rvTransfer.addItemDecoration(dividerItemDecoration)
         transfersAdapter.callback = object: TransfersAdapter.Callback {
             override fun onItemClicked(item: TransferType) {
-                PaymentsListFragmentDirections.navigateToPayment().let(findNavController()::navigate)
+                PaymentsListFragmentDirections.navigateToPayment(false).let(findNavController()::navigate)
             }
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
+    fun performCommand(voiceCommand: Command?) {
+        PaymentsListFragmentDirections.navigateToPayment(
+            voiceCommand == Command.ORGANIZATION_PAYMENT
+        ).let(findNavController()::navigate)
     }
 
 }

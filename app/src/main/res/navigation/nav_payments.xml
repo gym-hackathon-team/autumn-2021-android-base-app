@@ -17,10 +17,13 @@
         android:id="@+id/paymentFragment"
         android:name="com.example.app.ui.payment.PaymentFragment"
         android:label="Операция">
+
         <action
             android:id="@+id/navigateToConfirm"
             app:destination="@id/confirmationFragment"
             app:popUpTo="@id/paymentFragment"/>
+        <argument android:name="isPayment"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"

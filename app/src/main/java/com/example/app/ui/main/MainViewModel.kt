@@ -5,6 +5,8 @@ import com.example.app.di.viewmodel.AssistedViewModelFactory
 import com.example.app.di.viewmodel.hiltMavericksViewModelFactory
 import com.example.app.ui.base.BaseViewModel
 import com.example.app.ui.base.BaseViewState
+import com.example.domain.entities.Command
+import com.example.domain.entities.CommandsEntity
 import com.example.domain.gateway.commands.CommandsGateway
 import com.example.gateway.gateway.commands.RetrofitCommandsGateway
 import dagger.assisted.Assisted
@@ -37,8 +39,10 @@ class MainViewModel @AssistedInject constructor(
                         _viewEvents.post(MainActivityViewEvents.PerformCommand(it))
                     }
                 }, {
+//                    _viewEvents.post(MainActivityViewEvents.PerformCommand(CommandsEntity(true, Command.ORGANIZATION_PAYMENT)))
                     it.printStackTrace()
                 })
+                .disposeOnCleared()
         }
     }
 

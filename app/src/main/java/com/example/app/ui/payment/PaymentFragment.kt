@@ -5,12 +5,14 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.mvrx.*
 import com.example.app.R
 import com.example.app.databinding.FragmentPaymentBinding
 import com.example.app.ui.base.BaseFragment
+import com.example.app.ui.confirmation.ConfirmationFragmentArgs
 import com.example.app.ui.main_page.recycler_view.model.CardModel
 import com.example.app.ui.payment.recycler_view.CardAdapter
 
@@ -21,6 +23,7 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
 
     private val adapter = CardAdapter()
 
+    private val args: PaymentFragmentArgs by navArgs()
 
     override fun getBinding(): FragmentPaymentBinding {
         return FragmentPaymentBinding.inflate(layoutInflater)

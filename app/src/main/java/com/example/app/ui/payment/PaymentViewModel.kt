@@ -88,29 +88,9 @@ class PaymentViewModel @AssistedInject constructor(
                     )
                 }
             }, {
-//                setState {
-//                    copy(
-//                        cards = Fail(it)
-//                    )
-//                }
                 setState {
                     copy(
-                        cards = Success(
-                            listOf(
-                                CardModel(
-                                    id = "dsjadlaksjd",
-                                    balance = 300f,
-                                    accountId = "dsajlkdjas",
-                                    number = "1234124124124"
-                                ),
-                                CardModel(
-                                    id = "dsjadlaksjdewae",
-                                    balance = 300f,
-                                    accountId = "dsajlkdjas",
-                                    number = "1234124124124"
-                                )
-                            )
-                        )
+                        cards = Fail(it)
                     )
                 }
                 it.printStackTrace()

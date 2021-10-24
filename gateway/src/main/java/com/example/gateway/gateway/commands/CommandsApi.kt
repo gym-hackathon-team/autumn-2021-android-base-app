@@ -1,6 +1,7 @@
 package com.example.gateway.gateway.commands
 
 import com.example.gateway.entities.retrofit.response.CommandsResponse
+import io.reactivex.Completable
 import io.reactivex.Single
 import okhttp3.MultipartBody
 import retrofit2.http.Multipart
@@ -14,4 +15,10 @@ interface CommandsApi {
     fun uploadFile(
         @Part upload_file: MultipartBody.Part,
     ): Single<CommandsResponse>
+
+    @Multipart
+    @POST("/request/voiceRegister")
+    fun registerVoice(
+        @Part upload_file: MultipartBody.Part,
+    ): Completable
 }

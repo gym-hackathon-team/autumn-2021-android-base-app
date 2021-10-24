@@ -4,7 +4,9 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.media.AudioRecord
+import androidx.core.os.postDelayed
 import android.media.MediaRecorder
+import android.os.Handler
 import android.view.MotionEvent
 import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.NavHostFragment
@@ -14,9 +16,11 @@ import com.airbnb.mvrx.viewModel
 import com.example.app.R
 import com.example.app.databinding.ActivityMainBinding
 import com.example.app.ui.base.BaseActivity
+import com.example.app.ui.payments_list.PaymentsListFragment
 import com.example.domain.entities.Command
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
+import java.lang.Exception
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -64,6 +68,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             Command.ORGANIZATION_PAYMENT,
             Command.USER_TRANSACTION -> {
                 views.bottomNavigationView.selectedItemId = R.id.nav_payments
+                Handler().postDelayed(500L) {
+                    try {
+                        val fragment = (supportFragmentManager.fragments[0].childFragmentManager.fragments[0] as PaymentsListFragment)
+                        fragment.performCommand(it.it.voiceCommand)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
             }
             null -> Unit
         }

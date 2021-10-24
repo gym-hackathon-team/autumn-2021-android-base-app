@@ -6,6 +6,6 @@
 
     <include app:graph="@navigation/nav_main" />
     <include app:graph="@navigation/nav_payments" />
-<!--    <include app:graph="@navigation/nav_history" />-->
+    <include app:graph="@navigation/nav_history" />
 <!--    <include app:graph="@navigation/nav_chat" />-->
 </navigation>
