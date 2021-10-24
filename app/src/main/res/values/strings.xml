@@ -18,7 +18,7 @@
     <string name="transfer_requisites">По реквизитам</string>
     <string name="transfer">Перевести</string>
     <string name="card_divider_text">·</string>
-    <string name="back_to_main">Вернуться на главный</string>
+    <string name="back_to_main">Вернуться к переводам</string>
     <string name="balance">%s ₽</string>
     <string name="my_cards">Мои карты</string>
     <string name="extra_promo">Кешбэк 9% при походе в качалку по картам Visa «GYM»</string>
