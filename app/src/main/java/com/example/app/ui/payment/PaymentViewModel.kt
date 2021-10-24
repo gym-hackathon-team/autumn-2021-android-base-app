@@ -33,6 +33,8 @@ class PaymentViewModel @AssistedInject constructor(
         fetchCards()
     }
 
+    var isPayment = false
+
     override fun handle(action: PaymentFragmentViewActions) {
         when (action) {
             is PaymentFragmentViewActions.OnCardSelected -> handleOnCardSelected(action)
@@ -43,12 +45,13 @@ class PaymentViewModel @AssistedInject constructor(
     private fun handleProceed(action: PaymentFragmentViewActions.OnProceedClicked) {
         withState {
             if (action.accountId.isNotBlank() && action.amount != 0.0f) {
-                val card = it.selectedCard ?: return@withState
+                it.selectedCard ?: return@withState
                 _viewEvents.post(
                     PaymentFragmentViewEvents.NavigateToConfirmation(
                         accountId = action.accountId,
                         amount = action.amount,
-                        fromAccount = it.selectedCard.id
+                        fromAccount = it.selectedCard.id,
+                        isPayment = isPayment
                     )
                 )
             }

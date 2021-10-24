@@ -6,6 +6,7 @@ sealed class PaymentFragmentViewEvents : BaseViewEvents {
     class NavigateToConfirmation(
         val accountId: String,
         val amount: Float,
-        val fromAccount: String
+        val fromAccount: String,
+        val isPayment: Boolean
     ) : PaymentFragmentViewEvents()
 }

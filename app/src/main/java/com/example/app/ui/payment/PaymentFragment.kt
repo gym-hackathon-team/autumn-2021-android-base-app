@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -35,6 +36,7 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
     @SuppressLint("NotifyDataSetChanged")
     override fun setupListeners() {
         super.setupListeners()
+        viewModel.isPayment = args.isPayment
         setupIvAmountListener()
         viewModel.onEach(PaymentFragmentViewState::cards) {
             handleCardsUpdate(it)
@@ -47,9 +49,21 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
             views.bContinue.isEnabled = it != null
         }
         viewModel.observeViewEvents(::handle)
+        views.tvAccount.text = if (args.isPayment) {
+            "Счёт Организации"
+        } else {
+            "Карта зачисления"
+        }
+        views.etOrganizationAccount.isVisible = args.isPayment
+        views.etCard.isVisible = !args.isPayment
         views.bContinue.setOnClickListener {
+            val accountId = if (args.isPayment) {
+                views.etOrganizationAccount.text.toString()
+            } else {
+                views.etCard.text.toString()
+            }
             val action = PaymentFragmentViewActions.OnProceedClicked(
-                accountId = views.etOrganizationAccount.text.toString(),
+                accountId = accountId,
                 amount = views.etAmount.text.toString().toFloatOrNull() ?: 0f
             )
             viewModel.handle(action)
@@ -78,7 +92,8 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
                 PaymentFragmentDirections.navigateToConfirm(
                     event.fromAccount,
                     event.amount,
-                    event.accountId
+                    event.accountId,
+                    event.isPayment
                 ).let(findNavController()::navigate)
             }
         }

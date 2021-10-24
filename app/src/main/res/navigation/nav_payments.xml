@@ -39,6 +39,8 @@
         <argument
             android:name="accountId"
             app:argType="string" />
+        <argument android:name="isPayment"
+            app:argType="boolean" />
 
         <action
             android:id="@+id/action_confirmationFragment_to_successFragment"

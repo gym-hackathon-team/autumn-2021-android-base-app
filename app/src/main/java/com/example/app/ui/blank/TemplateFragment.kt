@@ -10,6 +10,7 @@ import com.airbnb.mvrx.fragmentViewModel
 import com.example.app.databinding.FragmentTemplateBinding
 import com.example.app.ui.base.BaseFragment
 import java.io.File
+import java.lang.Exception
 
 
 class TemplateFragment : BaseFragment<FragmentTemplateBinding>()  {
@@ -70,12 +71,18 @@ class TemplateFragment : BaseFragment<FragmentTemplateBinding>()  {
     }
 
     fun stopAudioRecord() {
-        mediaRecorder?.apply {
-            stop()
-            release()
+        try {
+            mediaRecorder?.apply {
+                stop()
+                release()
+            }
+            mediaRecorder = null
+            viewModel.sendFile(file)
+        } catch (e: Exception) {
+            mediaRecorder?.release()
+            mediaRecorder = null
+            e.printStackTrace()
         }
-        mediaRecorder = null
-        viewModel.sendFile(file)
     }
 
 }

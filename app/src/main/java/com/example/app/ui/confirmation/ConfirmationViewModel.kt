@@ -37,11 +37,19 @@ class ConfirmationViewModel @AssistedInject constructor(
     }
 
     private fun handleConfirm(action: ConfirmationFragmentViewActions.ActionConfirm) {
-        transactionsGateway.makePayment(
-            cardId = action.fromAccount,
-            accountId = action.accountId.filterNot { it == " "[0] },
-            amount = action.amount
-        ).subscribeOn(Schedulers.io())
+        if (action.isPayment) {
+            transactionsGateway.makePayment(
+                cardId = action.fromAccount,
+                accountId = action.accountId.filterNot { it == " "[0] },
+                amount = action.amount
+            )
+        } else {
+            transactionsGateway.makeTransaction(
+                cardId = action.fromAccount,
+                toCardId = action.accountId.filterNot { it == " "[0] },
+                amount = action.amount
+            )
+        }.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 _viewEvents.post(ConfirmationFragmentViewEvents.NavigateToResult(it.status))

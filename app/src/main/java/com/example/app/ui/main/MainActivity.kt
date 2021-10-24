@@ -111,12 +111,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun stopAudioRecord() {
-        mediaRecorder?.apply {
-            stop()
-            release()
+        try {
+            mediaRecorder?.apply {
+                stop()
+                release()
+            }
+            mediaRecorder = null
+            viewModel.sendFile(file)
+        } catch (e: Exception) {
+            mediaRecorder?.release()
+            mediaRecorder = null
+            e.printStackTrace()
         }
-        mediaRecorder = null
-        viewModel.sendFile(file)
     }
 
 }

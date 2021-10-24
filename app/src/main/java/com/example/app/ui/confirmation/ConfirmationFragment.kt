@@ -33,10 +33,8 @@ class ConfirmationFragment : BaseFragment<FragmentConfirmationBinding>() {
                 ConfirmationFragmentViewActions.ActionConfirm(
                     accountId = args.accountId,
                     amount = args.amount,
-                    fromAccount = args.cardId.filterNot { it == " "[0] }
-//                            accountId = argument?.getString("ACCOUNT_ID")!!,
-//                    amount = argument.getFloat("AMOUNT"),
-//                    fromAccount = argument.getString("CARD_ID")!!
+                    fromAccount = args.cardId.filterNot { it == " "[0] },
+                    isPayment = args.isPayment
                 )
             )
         }

@@ -7,6 +7,7 @@ sealed class ConfirmationFragmentViewActions: BaseViewActions {
     data class ActionConfirm(
         val accountId: String,
         val amount: Float,
-        val fromAccount: String
+        val fromAccount: String,
+        val isPayment: Boolean
     ): ConfirmationFragmentViewActions()
 }
