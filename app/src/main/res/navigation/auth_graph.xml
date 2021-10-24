@@ -14,5 +14,5 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.app.ui.main.MainActivity"
-        android:label="MainActivity" />
+        android:label="Фора-Банк" />
 </navigation>

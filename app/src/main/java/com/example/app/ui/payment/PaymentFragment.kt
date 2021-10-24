@@ -1,9 +1,12 @@
 package com.example.app.ui.payment
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +16,7 @@ import com.example.app.databinding.FragmentPaymentBinding
 import com.example.app.ui.base.BaseFragment
 import com.example.app.ui.main_page.recycler_view.model.CardModel
 import com.example.app.ui.payment.recycler_view.CardAdapter
+import com.example.app.utils.TypesOperation
 
 
 class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
@@ -21,6 +25,15 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
 
     private val adapter = CardAdapter()
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val argument= arguments
+        if (argument?.get("OPERATION")==TypesOperation.Payment){
+            views.tvAccount.text="Карта зачилсения"
+        } else  if (argument?.get("OPERATION")==TypesOperation.Transfer){
+            views.tvAccount.text="Счет организации"
+        }
+    }
 
     override fun getBinding(): FragmentPaymentBinding {
         return FragmentPaymentBinding.inflate(layoutInflater)
@@ -69,6 +82,9 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
     private fun handle(event: PaymentFragmentViewEvents) {
         when (event) {
             is PaymentFragmentViewEvents.NavigateToConfirmation -> {
+//                val arguments=bundleOf("ACCOUNT_ID" to event.fromAccount,"AMOUNT" to event.amount,"CARD_ID" to event.accountId)
+//                findNavController()
+//                    .navigate(R.id.navigateToConfirm,arguments)
                 PaymentFragmentDirections.navigateToConfirm(
                     event.fromAccount,
                     event.amount,

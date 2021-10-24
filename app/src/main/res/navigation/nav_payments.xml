@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/successFragment"
         android:name="com.example.app.ui.succes_screen.SuccessFragment"
-        android:label="Результат">
+        android:label="Результат операции">
 
         <argument
             android:name="success"
