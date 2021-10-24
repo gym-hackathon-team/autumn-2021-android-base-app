@@ -13,7 +13,7 @@ import java.io.File
 
 class VoiceRecorder(private val filesDir: File) {
     private var recorder: MediaRecorder? = null
-    private fun startRecording() {
+    fun startRecording() {
         recorder = MediaRecorder().apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
@@ -31,7 +31,7 @@ class VoiceRecorder(private val filesDir: File) {
     }
 
     private var message: String = ""
-    private fun stopRecording() {
+    fun stopRecording() {
         recorder?.apply {
             stop()
             release()

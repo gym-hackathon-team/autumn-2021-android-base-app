@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Фора-Банк</string>
     <string name="nav_main">Главный</string>
     <string name="nav_payments">Платежи</string>
     <string name="nav_history">История</string>
